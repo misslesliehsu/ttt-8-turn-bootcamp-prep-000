@@ -1,5 +1,5 @@
 def turn(board)
-  puts "Please enter a number 1-9"
+  puts "Please enter 1-9"
   user_input = gets.chomp
   def input_to_index(input)
     input = input.to_i - 1
@@ -31,7 +31,6 @@ elsif valid_move?(board, index) == false
   turn(board)
 end
 end
-
 
 def display_board(board)
   puts " #{board[0]} " + "|" + " #{board[1]} " + "|" +" #{board[2]} "
