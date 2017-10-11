@@ -3,7 +3,8 @@ def turn(board)
   user_input = gets.chomp
   index = input_to_index(user_input)
   if valid_move?(board, index) == true
-    display_board(move(board, index))
+    move(board, index)
+    display_board(board)
   elsif valid_move?(board, index) == false
     turn(board)
   end
