@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 require_relative '../lib/turn'
- 
+
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 puts "Welcome to Tic Tac Toe!"
@@ -12,8 +12,5 @@ if valid_move?(board, index)
   new_board = move(board, index)
   display_board(new_board)
 elsif valid_move?(board, index) == false
-display_board(board)  
+display_board(board)
 end
-
-
-
