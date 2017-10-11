@@ -24,11 +24,12 @@ def turn(board)
 if valid_move?(board, index) == true
   def move(array, index, value = "X")
      array[index] = value
-    end
+  end
   new_board = move(board, index)
   display_board(new_board)
 elsif valid_move?(board, index) == false
   turn(board)
+end
 end
 
 
@@ -39,7 +40,6 @@ def display_board(board)
   puts "-----------"
   puts " #{board[6]} " + "|" + " #{board[7]} " + "|" +" #{board[8]} "
 end
-
 
 
 
