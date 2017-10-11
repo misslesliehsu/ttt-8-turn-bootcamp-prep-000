@@ -1,11 +1,20 @@
 def turn(board)
   puts "Please enter 1-9"
   user_input = gets.chomp
-  def input_to_index(input)
-    input = input.to_i - 1
-  end
   index = input_to_index(user_input)
-  def valid_move?(board, index)
+  if valid_move?(board, index) == true
+    new_board = move(board, index)
+    display_board(new_board)
+  elsif valid_move?(board, index) == false
+    turn(board)
+  end
+end
+    
+def move(array, index, value = "X")
+   array[index] = value
+end
+
+def valid_move?(board, index)
     if index >= 0 && index <= 8
       test1 = true
     else test1 = false
@@ -21,16 +30,11 @@ def turn(board)
     else return false
     end
   end
-if valid_move?(board, index) == true
-  def move(array, index, value = "X")
-     array[index] = value
-  end
-  new_board = move(board, index)
-  display_board(new_board)
-elsif valid_move?(board, index) == false
-  turn(board)
+
+def input_to_index(input)
+    input = input.to_i - 1
 end
-end
+
 
 def display_board(board)
   puts " #{board[0]} " + "|" + " #{board[1]} " + "|" +" #{board[2]} "
